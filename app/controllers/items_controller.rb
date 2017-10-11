@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new()
 
-    if @play.save
+    if @item.save
       redirect_to root_path
     else
       render 'new'
