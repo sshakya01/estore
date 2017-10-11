@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+data = [
+  {
+    name: "Sometimes you win, sometimes you learn.",
+    category: "Unknown",
+    price: "300",
+    quantity: "2",
+    description: "book"
+  },
+  {
+    name: "booked.",
+    category: "Unknown",
+    price: "300",
+    quantity: "2",
+    description: "book"
+  }
+
+]
+
+data.each do |item_data|
+  Item.create(item_data)
+end
