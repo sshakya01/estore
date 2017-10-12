@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      apiData: null,
+      apiData: null, // where is this being updated?
       apiDataLoaded: false,
       inputNameValue: '',
       inputCategoryValue: '',
@@ -57,7 +57,8 @@ handleInputNameChange(event) {
   handleItemSubmit(event) {
     event.preventDefault();
     event.target.name = '';
-
+     console.log(this.state,'>-------->')
+     console.log(this.state)
     axios.post('/items', {
       name: this.state.inputNameValue,
       category: this.state.inputCategoryValue,
@@ -65,7 +66,7 @@ handleInputNameChange(event) {
       quantity: this.state.inputQuantityValue
     })
     .then(res => {
-      console.log(res.data.item);
+      console.log(res.config.data,'is this the response');
       if (res.data.item.id !== undefined) {
         const newItem = {
           name: res.data.item.name,
@@ -74,7 +75,7 @@ handleInputNameChange(event) {
           quantity: res.data.item.quantity
 
         }
-        /*  just what we discussed yesterday how to set state as an aray */
+        /* setting state as an array */
         this.setState((prevState) => {
           return {
             items: prevState.items.concat(newItem),
@@ -85,7 +86,7 @@ handleInputNameChange(event) {
   }
 
   render() {
-    console.log('APP rendering', this.state);
+    //console.log('APP rendering', this.state.apiData);
     return (
       <div className="App">
         <div className="App-header">
@@ -112,20 +113,20 @@ handleInputNameChange(event) {
 
 
 ////////
-  // showItemsOnPage() {
+//   showItemsOnPage() {
 
-  //   return this.state.apiData.map((data) => {
-  //     return (
-  //       <div className="data" key={data.id}>
-  //         <p>{data.name}</p>
-  //         <span className="category">{data.category}</span>
-  //         <span className="price">{data.price}</span>
-  //         <span className="quantity">{data.quantity}</span>
+//     return this.state.apiData.map((data) => {
+//       return (
+//         <div className="data" key={data.id}>
+//           <p>{data.name}</p>
+//           <span className="category">{data.category}</span>
+//           <span className="price">{data.price}</span>
+//           <span className="quantity">{data.quantity}</span>
 
-  //       </div>
-  //     );
-  //   });
-  // }
+//         </div>
+//       );
+//     });
+//   }
 
 //   render() {
 //     return (

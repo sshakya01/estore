@@ -14,11 +14,18 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new()
 
+    @item.to_json
+     puts "this is puts: #{Item}"
+    @item = Item.new(item_params)
+ puts "this is prarmas: #{item_params}"
     if @item.save
+      puts 'hello'
       redirect_to root_path
+
     else
+    puts 'nope--------------'
+
       render 'new'
     end
   end
