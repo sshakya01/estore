@@ -29,7 +29,7 @@ handleItemSubmit(event) {
         }
         this.props.newItemFromDB(newItem)
       }
-      this.props.history.push('/')
+      this.props.history.push('/item')
     }).catch(err => console.log(err));
 
   }

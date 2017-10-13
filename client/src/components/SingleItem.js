@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Item extends Component {
+class SingleItem extends Component {
   render() {
     return (
       <div className='itemHolder'>
@@ -10,4 +10,5 @@ class Item extends Component {
   };
 }
 
-export default Item;
+export default SingleItem;
+
