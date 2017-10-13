@@ -10,24 +10,24 @@ class ItemsList extends Component {
     this.handleViewItem = this.handleViewItem.bind(this)
   }
 
-//   handleItemDelete(id){
-//     fetch(`/item/${id}`, {
-//       method: 'DELETE',
-//     })
-//     .then((response) => {
-//       if (response.status === 200) {
-//         fetch('/item')
-//       .then((res) => {
-//         return res.json();
-//       }).then((jsonRes) => {
-//         this.setState((prevState) => { return {
-//           apiData: jsonRes,
-//         }
-//       });
-//     });
-//   }
-// });
-// }
+  handleItemDelete(id){
+    fetch(`/item/${id}`, {
+      method: 'DELETE',
+    })
+    .then((response) => {
+      if (response.status === 200) {
+        fetch('/item')
+      .then((res) => {
+        return res.json();
+      }).then((jsonRes) => {
+        this.setState((prevState) => { return {
+          apiData: jsonRes,
+        }
+      });
+    });
+  }
+});
+}
 
 handleViewItem(id){
   this.props.handleSingleView(id)

@@ -24,6 +24,23 @@ button{
   width: 50%;
   margin: 5em auto 0;
 }
+
+.header{
+  background: red;
+  padding: 2em;
+  text-align: center;
+  color: white;
+  background-image: url(https://www.freewebheaders.com/wordpress/wp-content/gallery/high-tech-hero-headers/blue-neon-light-circles-circuit-board-design-hi-tech-hero-header.jpg);
+}
+
+ul {
+  list-style: none;
+  text-align: right;
+}
+li {
+  display: inline;
+  padding-left: 15%;
+}
 /*.App {
   text-align: center;
 }

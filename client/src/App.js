@@ -5,6 +5,8 @@ import axios from 'axios';
 import ItemsList from './components/ItemsList';
 import Item from './components/Item';
 import SingleItem from './components/SingleItem';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import {Route, Redirect, Switch, Link, withRouter} from 'react-router-dom';
 
 class App extends Component {
@@ -87,6 +89,7 @@ handleInputNameChange(event) {
     return (
       <div className="App">
         <main id="background">
+        <Header />
           <Switch>
             <Route exact path="/item" render={props => <ItemsList handleSingleView={this.singleItemView} apiData={this.state.apiData} apiDataLoaded={this.state.apiDataLoaded} {...props} />} />
             <Route exact path="/item/:id"  render={props => <SingleItem item={this.state.singleItem}/>} />}
@@ -104,6 +107,7 @@ handleInputNameChange(event) {
               newItemFromDB={this.newItemFromDB} />} />
           </Switch>
         </main>
+        <Footer />
       </div>
     );
   }
