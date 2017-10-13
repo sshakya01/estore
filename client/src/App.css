@@ -1,3 +1,29 @@
+.item{
+  background-color: lightblue;
+  width: 40%;
+  margin: .5em auto;
+  padding: 1em;
+}
+
+h3{
+  font-size: 1.4em;
+}
+
+.price{
+ text-align: right;
+}
+
+button{
+  padding: 1em;
+  font-size: 1em;
+  align-items: right;
+}
+
+.itemHolder {
+  background-color: lightblue;
+  width: 50%;
+  margin: 5em auto 0;
+}
 /*.App {
   text-align: center;
 }
@@ -148,4 +174,5 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
 */

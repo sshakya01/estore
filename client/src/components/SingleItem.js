@@ -5,6 +5,9 @@ class SingleItem extends Component {
     return (
       <div className='itemHolder'>
         {this.props.item.name}
+        <div className='price'>
+        {this.props.item.price}
+        </div>
       </div>
     );
   };

@@ -39,7 +39,7 @@ renderItemsList() {
     if (this.props.apiDataLoaded) {
       return this.props.apiData.map((item) => {
         return (
-        <div>
+        <div className="item">
           <h3><Item item={item} key={item.id} /></h3>
           <button className="itemButton" onClick={()=>{this.handleItemDelete(item.id)}} id="itemDelete">{'\uD83D\uDDD1'}</button>
           <button className="viewItem" onClick={() => {this.handleViewItem(item.id)}}>View</button>
