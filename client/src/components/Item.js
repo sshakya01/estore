@@ -24,7 +24,9 @@ class Item extends Component {
       console.log(this.props)
     return (
       <div>
-        <h3>{item["0"].name}</h3>
+        <h3>Item Name:{item["0"].name}</h3>
+        <h3>Price:{"$" + item["0"].price}</h3>
+        <p>Quantity:{item["0"].quantity}</p>
       </div>
       )
   } else {

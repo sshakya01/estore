@@ -9,7 +9,7 @@ class ItemsList extends Component {
     super();
     // state
     this.state = {
-      apiData: null, // where is this being updated?
+      // apiData: null, // where is this being updated?
       // apiDataLoaded: false,
       inputNameValue: '',
       inputCategoryValue: '',
