@@ -25,6 +25,7 @@ this.handleInputNameChange = this.handleInputNameChange.bind(this);
 this.handleInputCategoryChange = this.handleInputCategoryChange.bind(this);
 this.handleInputPriceChange = this.handleInputPriceChange.bind(this);
 this.handleInputQuantityChange = this.handleInputQuantityChange.bind(this);
+this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
 this.newItemFromDB = this.newItemFromDB.bind(this);
 this.singleItemView = this.singleItemView.bind(this);
 }
@@ -60,6 +61,11 @@ handleInputNameChange(event) {
   handleInputQuantityChange(event) {
     this.setState({
       inputQuantityValue: event.target.value
+    });
+  }
+  handleDescriptionChange(event) {
+    this.setState({
+      inputDescriptionValue: event.target.value
     });
   }
 
@@ -100,10 +106,12 @@ handleInputNameChange(event) {
               handleInputCategoryChange={this.handleInputCategoryChange}
               handleInputPriceChange={this.handleInputPriceChange}
               handleInputQuantityChange={this.handleInputQuantityChange}
+              handleDescriptionChange={this.handleDescriptionChange}
               inputNameValue={this.state.inputNameValue}
               inputCategoryValue={this.state.inputCategoryValue}
               inputPriceValue={this.state.inputPriceValue}
               inputQuantityValue={this.state.inputQuantityValue}
+              inputDescriptionValue={this.state.inputDescriptionValue}
               newItemFromDB={this.newItemFromDB} />} />
           </Switch>
         </main>

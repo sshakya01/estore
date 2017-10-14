@@ -14,7 +14,7 @@ class ItemsList extends Component {
   handleItemDelete(id){
     fetch(`/items/${id}`, {
       method: 'DELETE',
-    })
+    },window.location.reload())
     .then((response) => {
       if (response.status === 200) {
         fetch('/items')

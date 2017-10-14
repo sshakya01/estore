@@ -9,23 +9,25 @@ class AddItemForm extends Component {
   }
 
 handleItemSubmit(event) {
-    event.preventDefault();
+     event.preventDefault();
 
     axios.post('/items', {
       name: this.props.inputNameValue,
       category: this.props.inputCategoryValue,
       price: this.props.inputPriceValue,
-      quantity: this.props.inputQuantityValue
+      quantity: this.props.inputQuantityValue,
+      description: this.props.inputDescriptionValue
     })
     .then(res => {
-      console.log(res);
+      window.location.reload();
 
       if (!res){
         const newItem = {
           name: res.data.item.name,
           category: res.data.item.category,
           price: res.data.item.price,
-          quantity: res.data.item.quantity
+          quantity: res.data.item.quantity,
+          description: res.data.item.description
         }
         this.props.newItemFromDB(newItem)
       }
@@ -67,6 +69,13 @@ handleItemSubmit(event) {
           name="price"
           placeholder="How many in stock"
           onChange={this.props.handleInputQuantityChange}
+        /><br/>
+        <input
+          type="text"
+          value={this.props.inputDescriptionValue}
+          name="description"
+          placeholder="Description"
+          onChange={this.props.handleDescriptionChange}
         /><br/>
         <button type="submit" id="submit">Add Item!</button>
       </form>
