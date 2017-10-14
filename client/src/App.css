@@ -1,8 +1,11 @@
 .item{
-  background-color: lightblue;
-  width: 40%;
-  margin: .5em auto;
+  display: inline-block;
+  background-color: lightgrey;
+  width: 25%;
+  margin: .5em .5em;
   padding: 1em;
+  border: 1px solid blue;
+
 }
 
 h3{
@@ -33,6 +36,9 @@ button{
   background-image: url(https://www.freewebheaders.com/wordpress/wp-content/gallery/high-tech-hero-headers/blue-neon-light-circles-circuit-board-design-hi-tech-hero-header.jpg);
 }
 
+.footer{
+  margin-bottom: 0%;
+}
 ul {
   list-style: none;
   text-align: right;
@@ -203,3 +209,45 @@ li {
 }
 
 */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+input {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  border: 2px solid purple;
+  border-radius: 10px;
+}
+button#submit {
+  background-color: #7b60e4;
+
+}
+
+button {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color: #e24367;
+  border: none;
+  border-radius: 15px;
+}
+
+span {
+  color: #941a35;
+}
+
+.quote {
+  border: 1px solid steelblue;
+}
+
