@@ -7,6 +7,7 @@ import Item from './components/Item';
 import SingleItem from './components/SingleItem';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ShoppingCart from './components/ShoppingCart'
 import {Route, Redirect, Switch, Link, withRouter} from 'react-router-dom';
 
 class App extends Component {
@@ -14,6 +15,7 @@ constructor() {
   super()
   this.state = {
     apiData: [],
+    shoppingCart: [],
     apiDataLoaded: false,
     inputNameValue: '',
     inputCategoryValue: '',
@@ -28,6 +30,7 @@ this.handleInputQuantityChange = this.handleInputQuantityChange.bind(this);
 this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
 this.newItemFromDB = this.newItemFromDB.bind(this);
 this.singleItemView = this.singleItemView.bind(this);
+this.handleaddtoCart = this.handleaddtoCart.bind(this);
 }
 
 componentDidMount() {
@@ -91,6 +94,12 @@ handleInputNameChange(event) {
   })
 }
 
+handleaddtoCart(item){
+  this.setState((prevState) => {
+    return {shoppingCart: prevState.shoppingCart.concat(item)};
+  });
+}
+
   render() {
     return (
       <div className="App">
@@ -98,9 +107,8 @@ handleInputNameChange(event) {
         <Header />
           <Switch>
             <Route exact path="/item" render={props => <ItemsList handleSingleView={this.singleItemView} apiData={this.state.apiData} apiDataLoaded={this.state.apiDataLoaded} {...props} />} />
-            <Route exact path="/item/:id"  render={props => <SingleItem item={this.state.singleItem}/>} />}
-            {/*<Route exact path="/item/:id"  component={Item}/>*/}
-
+            <Route exact path="/item/:id"  render={props => <SingleItem handleaddtoCart={this.handleaddtoCart} item={this.state.singleItem}/>} />}
+            <Route exact path="/cart"  component={props => <ShoppingCart shoppingCart={this.state.shoppingCart} {...props} />}/>
             <Route exact path="/add" render={props => <AddItemForm {...props}
               handleInputNameChange={this.handleInputNameChange}
               handleInputCategoryChange={this.handleInputCategoryChange}
