@@ -8,15 +8,16 @@ class ItemsList extends Component {
   constructor(){
     super()
     this.handleViewItem = this.handleViewItem.bind(this)
+    this.handleItemDelete = this.handleItemDelete.bind(this)
   }
 
   handleItemDelete(id){
-    fetch(`/item/${id}`, {
+    fetch(`/items/${id}`, {
       method: 'DELETE',
     })
     .then((response) => {
       if (response.status === 200) {
-        fetch('/item')
+        fetch('/items')
       .then((res) => {
         return res.json();
       }).then((jsonRes) => {

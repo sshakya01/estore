@@ -41,6 +41,16 @@ li {
   display: inline;
   padding-left: 15%;
 }
+
+.logo{
+  font-size: 46px;
+  color: whitesmoke;
+  margin-top: 0px;
+  text-shadow: 6px 6px black;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  text-align: left;
+  margin-left: 45px;
+}
 /*.App {
   text-align: center;
 }
