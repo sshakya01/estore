@@ -11,7 +11,7 @@ class SingleItem extends Component {
         <div className='description'>
         <p>Description: {this.props.item.description}</p>
         </div>
-     <button id="addtocart" onClick= {()=>this.props.handleaddtoCart(this.props.item)}>Add to Cart</button>
+     <button id="addtocart" onClick= {(event) => this.props.handleaddtoCart(this.props.item, event)}>Add to Cart</button>
       </div>
 
     );

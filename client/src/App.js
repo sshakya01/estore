@@ -9,7 +9,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ShoppingCart from './components/ShoppingCart'
 import Home from './components/Home';
-import {Route, Redirect, Switch, Link, withRouter} from 'react-router-dom';
+import {Route, Redirect, Switch, Link, withRouter, BrowserRouter as Router } from 'react-router-dom';
 
 class App extends Component {
 constructor() {
@@ -95,11 +95,13 @@ handleInputNameChange(event) {
   })
 }
 
-handleaddtoCart(item){
+handleaddtoCart(item, event){
+  console.log(event)
+  event.preventDefault();
   console.log(item)
-  this.setState((prevState) => {
-    return {shoppingCart: prevState.shoppingCart.concat(item)};
-  });
+  this.setState({
+  shoppingCart: this.state.shoppingCart.concat([item])
+  }, () => console.log(this.state.shoppingCart) );
 }
 
   render() {
