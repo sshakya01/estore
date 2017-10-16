@@ -4,13 +4,16 @@ class SingleItem extends Component {
   render() {
     return (
       <div className='itemHolder'>
-      <button onClick= {()=>this.props.handleaddtoCart(this.props.item)}>Add to Cart</button>
-        {this.props.item.name}
+       <h1>Item Name: {this.props.item.name}</h1>
         <div className='price'>
-        {this.props.item.price}
+       <h3>Price: ${this.props.item.price}</h3>
         </div>
-        {this.props.item.description}
+        <div className='description'>
+        <p>Description: {this.props.item.description}</p>
+        </div>
+     <button id="addtocart" onClick= {()=>this.props.handleaddtoCart(this.props.item)}>Add to Cart</button>
       </div>
+
     );
   };
 }

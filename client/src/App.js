@@ -8,6 +8,7 @@ import SingleItem from './components/SingleItem';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ShoppingCart from './components/ShoppingCart'
+import Home from './components/Home';
 import {Route, Redirect, Switch, Link, withRouter} from 'react-router-dom';
 
 class App extends Component {
@@ -95,6 +96,7 @@ handleInputNameChange(event) {
 }
 
 handleaddtoCart(item){
+  console.log(item)
   this.setState((prevState) => {
     return {shoppingCart: prevState.shoppingCart.concat(item)};
   });
@@ -106,6 +108,7 @@ handleaddtoCart(item){
         <main id="background">
         <Header />
           <Switch>
+            <Route exact path="/" component= {Home}/>
             <Route exact path="/item" render={props => <ItemsList handleSingleView={this.singleItemView} apiData={this.state.apiData} apiDataLoaded={this.state.apiDataLoaded} {...props} />} />
             <Route exact path="/item/:id"  render={props => <SingleItem handleaddtoCart={this.handleaddtoCart} item={this.state.singleItem}/>} />}
             <Route exact path="/cart"  component={props => <ShoppingCart shoppingCart={this.state.shoppingCart} {...props} />}/>

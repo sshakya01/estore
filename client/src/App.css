@@ -13,7 +13,7 @@ h3{
 }
 
 .price{
- text-align: right;
+ text-align: center;
 }
 
 button{
@@ -24,8 +24,9 @@ button{
 
 .itemHolder {
   background-color: lightblue;
-  width: 50%;
+  width: 100%;
   margin: 5em auto 0;
+  text-align: center;
 }
 
 .header{
@@ -36,16 +37,23 @@ button{
   background-image: url(https://www.freewebheaders.com/wordpress/wp-content/gallery/high-tech-hero-headers/blue-neon-light-circles-circuit-board-design-hi-tech-hero-header.jpg);
 }
 
-.footer{
-  margin-bottom: 0%;
+.footer {
+
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:midnightblue;
+  text-align: center;
 }
 ul {
   list-style: none;
-  text-align: right;
+  text-align: center;
 }
 li {
   display: inline;
-  padding-left: 15%;
+  padding-left: 5%;
+  color:white;
 }
 
 .logo{
@@ -54,13 +62,47 @@ li {
   margin-top: 0px;
   text-shadow: 6px 6px black;
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-  text-align: left;
+  text-align: center;
   margin-left: 45px;
 }
 
 .itemlist{
   margin:0 auto;
   text-align: center;
+}
+.Landing{
+ background-image: url(https://www.wood-mode.com/sites/default/files/Zebra-Wood-lg_0.jpg);
+  width: 25%;
+  height:40%;
+  margin: 4em auto ;
+  padding-bottom: 20%;
+  border: 1px solid blue;
+
+}
+#enterStore{
+margin-top: 15%;
+  padding: 5px 10px;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: gold;
+  border: none;
+  border-radius: 50%;
+}
+body{
+  background-color: black;
+}
+#welcome{
+  color: white;
+  background-color: brown;
+  text-align: center;
+  margin:25%;
+}
+#addtocart{
+  background-color: green;
 }
 /*.App {
   text-align: center;

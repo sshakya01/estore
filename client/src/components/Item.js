@@ -4,11 +4,10 @@ class Item extends Component {
   render() {
     return (
       <div className='itemHolder'>
-       {this.props.item.name}
+      <h2>{this.props.item.name} </h2>
        <div className='price'>
-       {this.props.item.price}
+       <h3>${this.props.item.price}</h3>
        </div>
-       {this.props.item.description}
       </div>
     );
   };
