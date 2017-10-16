@@ -26,4 +26,3 @@ The app will allow sellers to build a list of items they wish to sell. Seller wi
 - As a user, I want to be oriented to the application at the start of a session.
 - As a seller, I want to be able to add, edit and delete the products I intend to sell.
 - As a buyer, I want to be able to add the item i want to purchase in the cart.
-- As a buyer, I want to get the total of the merchandise I am buying before checking out.
